@@ -1,0 +1,236 @@
+export { future as theme } from 'mdx-deck/themes'
+
+# A new way to do form validation
+
+@ewolfe
+
+---
+
+## Forms are hard
+
+> "HTML form elements work a little bit differently from other DOM elements in React, because form elements naturally keep some internal state."
+> 
+> — https://reactjs.org/
+
+---
+
+## Gotta try ’em all
+
+- No library: fine for smaller Forms
+- formik: bring your own validation
+- formsy: bring your own inputs
+- redux-form: unnecessary state management
+- react-final-form: giant API, where's my `<input />`?
+- redux-form: unmaintained
+- informed: I just want a dang `<input />`!
+
+---
+
+# 😕
+
+---
+
+# Here we go again
+
+Let’s build yet another form library
+
+---
+
+import { CodeSurfer } from "mdx-deck-code-surfer"
+
+<CodeSurfer
+  title="Wish list"
+  notes="Small API, fast learning curve"
+  code={require("!raw-loader!./react-html-form/wishlist-1.js")}
+  lang="jsx"
+  showNumbers={true}
+  dark={true}
+  steps={[
+    { lines: [1,4], notes: "Standard <form>. No render props or HOC’s" },
+    { lines: [3], notes: "Standard <input>. No custom <Field> components" },
+    { tokens: { 3: [3, 4, 5, 6] }, notes: "Familiar validation" }
+  ]}
+/>
+
+---
+
+<CodeSurfer
+  title="Wish list"
+  notes="Familiar validation"
+  code={require("!raw-loader!./react-html-form/wishlist-2.js")}
+  lang="jsx"
+  showNumbers={true}
+  dark={true}
+  steps={[
+    { lines: [2] },
+    { lines: [3] },
+    { lines: [4] },
+    { lines: [5] },
+    { lines: [6] },
+    { lines: [7] },
+  ]}
+/>
+
+---
+
+<CodeSurfer
+  title="Wish list"
+  notes="Familiar styling"
+  code={require("!raw-loader!./react-html-form/wishlist-3.js")}
+  lang="jsx"
+  showNumbers={true}
+  dark={true}
+  steps={[
+    { range: [1,9], notes: "It’s just css" },
+    { lines: [2], notes: "Standard pseudo-selectors" },
+    { lines: [6], notes: "Standard pseudo-selectors" }
+  ]}
+/>
+
+---
+
+## So how are we going to do it?
+
+---
+
+## ...First
+
+*Form libraries should do 3 things:*
+
+1. Get values in and out of form state
+1. Handle validation and error messages
+1. Handle form submission
+
+<small style={{ fontSize: '16px', opacity: 0.5 }}>Thanks formik for presenting this list clearly!</small>
+
+---
+
+<CodeSurfer
+  title="3. Handling form submission "
+  notes="My idea of simple"
+  code={require("!raw-loader!./react-html-form/wishlist-4.js")}
+  lang="jsx"
+  showNumbers={true}
+  dark={true}
+  steps={[
+    { lines: [8], notes: "Normal React event handler" },
+    { lines: [3], notes: "Need a way to get form data" }
+  ]}
+/>
+
+---
+
+<CodeSurfer
+  title="3. Handling form submission"
+  notes="We need a component"
+  code={require("!raw-loader!./react-html-form/wishlist-5.js")}
+  lang="js"
+  showNumbers={true}
+  dark={true}
+  steps={[
+    { lines: [1], notes: "Using just <form> would be a little hard" },
+    { lines: [10, 14], notes: "Replace <form> with <Form>" },
+    { lines: [10], notes: "Could overload `onSubmit`, but this is safer" },
+    { tokens: { 4: [ 4, 5 ]}, notes: "formData included as an additional argument" },
+    { tokens: { 5: [ 7, 8 ]}, notes: "The form values are returned as JSON" }
+  ]}
+/>
+
+---
+
+# 😃
+
+---
+
+<CodeSurfer
+  title="3a. Adding goodies"
+  code={require("!raw-loader!./react-html-form/wishlist-6.js")}
+  lang="js"
+  showNumbers={true}
+  dark={true}
+  steps={[
+    { lines: [6, 7, 8]},
+    { lines: [9, 10, 11], notes: "Built in browser message - will customize later" },
+    { lines: [12, 13, 14], notes: "Useful for customizing when to display the error" },
+    { lines: [15, 16, 17], notes: "Useful for customizing when to display the error" },
+    { lines: [18, 19, 20], notes: "Useful for customizing when to display the error" },
+    { lines: [21]},
+    { lines: [22]},
+    { lines: [23]},
+    { lines: [24]},
+  ]}
+/>
+
+---
+
+# 👌
+
+---
+
+<CodeSurfer
+  title="2. Validation and error messages"
+  code={require("!raw-loader!./react-html-form/wishlist-7.js")}
+  lang="js"
+  showNumbers={true}
+  dark={true}
+  steps={[
+    { lines: [6, 7, 8]},
+    { lines: [9, 10, 11], notes: "Built in browser message - will customize later" },
+    { lines: [12, 13, 14], notes: "Useful for customizing when to display the error" },
+    { lines: [15, 16, 17], notes: "Useful for customizing when to display the error" },
+    { lines: [18, 19, 20], notes: "Useful for customizing when to display the error" },
+    { lines: [21]},
+    { lines: [22]},
+    { lines: [23]},
+    { lines: [24]},
+  ]}
+/>
+
+---
+
+# 😎
+
+---
+
+# 🔥
+
+---
+
+
+
+---
+
+# Extra
+
+data-valueasnumber
+data-valueasdate
+
+---
+
+## Introducing
+
+react-html-form
+
+---
+
+## Circling Back
+
+> "HTML form elements work a little bit differently from other DOM elements in React, because form elements naturally keep some internal state."
+> 
+> — https://reactjs.org/
+
+Let's embrace that, instead of fighting against it
+
+---
+
+A new way to do form validation
+
+---
+
+An ~new~ old way to do form validation~
+
+
+
+---
+
+# The end
