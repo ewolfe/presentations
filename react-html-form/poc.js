@@ -1,4 +1,4 @@
-class ProofOfConcept extends React.Component {
+class Form extends React.Component {
   handleChange() {
     let values = {};
     for (let i = 0; i < this.form.elements.length; i += 1) {

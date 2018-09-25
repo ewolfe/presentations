@@ -9,7 +9,7 @@ class MyPage extends React.Component {
     return (
       <Form
         onData={this.onData}
-        onChangeWithData={this.handleSubmit}
+        onChangeWithData={this.handleChange}
         onSubmitWithData={this.handleSubmit}
       >
         <label>Name</label>
