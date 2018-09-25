@@ -16,13 +16,13 @@ export { future as theme } from 'mdx-deck/themes'
 
 ## Gotta try ’em all
 
-- No library: fine for smaller Forms
+- No library: fine for smaller forms
 - formik: bring your own validation
 - formsy: bring your own inputs
 - redux-form: unnecessary state management
-- react-final-form: giant API, where's my `<input />`?
+- react-final-form: giant API, proprietary `<Field>`?
 - redux-form: unmaintained
-- informed: I just want a dang `<input />`!
+- informed: Proprietary `<Field>`!
 
 ---
 
@@ -30,9 +30,9 @@ export { future as theme } from 'mdx-deck/themes'
 
 ---
 
-# Here we go again
+# YAFL
 
-Let’s build yet another form library
+Let’s build Yet Another Form Library
 
 ---
 
@@ -56,7 +56,7 @@ import { CodeSurfer } from "mdx-deck-code-surfer"
 
 <CodeSurfer
   title="Wish list"
-  notes="Familiar validation"
+  notes="Familiar validation via attributes"
   code={require("!raw-loader!./react-html-form/wishlist-2.js")}
   lang="jsx"
   showNumbers={true}
@@ -89,7 +89,7 @@ import { CodeSurfer } from "mdx-deck-code-surfer"
 
 ---
 
-## So how are we going to do it?
+## Let’s go write some code
 
 ---
 
@@ -163,7 +163,21 @@ import { CodeSurfer } from "mdx-deck-code-surfer"
 
 ---
 
-# 👌
+## ✅ Handling form submission
+
+---
+
+## 2. Validation and error messages
+
+---
+
+Browser validation:
+
+<form>
+  <label htmlFor="choose">Name</label><br/>
+  <input required id="choose" name="name" /><br/>
+  <button>Submit</button>
+</form>
 
 ---
 
@@ -174,42 +188,42 @@ import { CodeSurfer } from "mdx-deck-code-surfer"
   showNumbers={true}
   dark={true}
   steps={[
-    { lines: [6, 7, 8]},
-    { lines: [9, 10, 11], notes: "Built in browser message - will customize later" },
-    { lines: [12, 13, 14], notes: "Useful for customizing when to display the error" },
-    { lines: [15, 16, 17], notes: "Useful for customizing when to display the error" },
-    { lines: [18, 19, 20], notes: "Useful for customizing when to display the error" },
-    { lines: [21]},
-    { lines: [22]},
-    { lines: [23]},
-    { lines: [24]},
+    { lines: [22], notes: "Ability to customize built in browser message" },
+    { lines: [15], notes: "Ability to turn off browser UI for errors"},
+    { lines: [26], notes: "Ability to show custom message"},
+    { lines: [16], notes: "Ability to show custom message"},
+    { lines: [4, 5, 6], notes: "Ability to show custom message"},
   ]}
 />
 
 ---
 
-# 😎
+## ✅ Validation and error messages
+
+Kind of... Missing custom validations, both sync and async
 
 ---
 
-# 🔥
+## 1. Get values in and out of form state
 
 ---
 
-
+<CodeSurfer
+  title="1. Get values in and out of form state"
+  code={require("!raw-loader!./react-html-form/wishlist-8.js")}
+  lang="js"
+  showNumbers={true}
+  dark={true}
+  steps={[
+    { lines: [17], notes: "Get values in: Use a controlled input" },
+    { lines: [18], notes: "Get values in: Use an uncontrolled input"},
+    { lines: [11, 12, 13], notes: "Get values out: use prop functions"},
+  ]}
+/>
 
 ---
 
-# Extra
-
-data-valueasnumber
-data-valueasdate
-
----
-
-## Introducing
-
-react-html-form
+## ✅ Get values in and out of form state
 
 ---
 
@@ -219,18 +233,66 @@ react-html-form
 > 
 > — https://reactjs.org/
 
-Let's embrace that, instead of fighting against it
+Let's embrace internal state, instead of fighting against it
 
 ---
 
-A new way to do form validation
+## Remember the title? 
+
+"A new way to do form validation"
 
 ---
 
-An ~new~ old way to do form validation~
+## Introducing... the old way
 
-
+`HTMLFormElement.elements`
 
 ---
 
-# The end
+> The HTMLFormElement property elements returns an HTMLFormControlsCollection listing all the form controls contained in the `<form>` element.
+
+---
+
+1. Set a ref
+1. Iterate over the elements and pull out state data
+
+---
+
+<CodeSurfer
+  code={require("!raw-loader!./react-html-form/poc.js")}
+  lang="js"
+  showNumbers={true}
+  dark={true}
+  steps={[
+    { lines: [15, 16, 17], notes: "Set a ref" },
+    { range: [2,9], notes: "Iterate over the elements and pull out state data"},
+  ]}
+/>
+
+---
+
+import { Invert } from 'mdx-deck/layouts';
+
+export default Invert
+
+## Previewing
+
+<br /> 
+<br /> 
+<img style={{ maxWidth: '25vw' }} src="https://github.com/ewolfe/react-html-form/raw/master/assets/logo.jpg" />
+
+---
+
+https://github.com/ewolfe/react-html-form
+
+<iframe src="https://codesandbox.io/embed/x70lxkzkvo" style={{width: '100%', height: 500, border: 0, borderRadius: 4, overflow: 'hidden'}} sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin" />
+
+---
+
+## The end 🎉
+
+WIP - looking for feedback!
+
+https://github.com/ewolfe/react-html-form
+
+e@ewolfe.me
