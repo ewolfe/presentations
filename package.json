@@ -3,6 +3,8 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
+    "build-single": "mdx-deck build",
+    "build": "./build.sh",
     "lint": "prettier --list-different \"./**/*.js\"",
     "start": "mdx-deck",
     "test": "yarn lint"
