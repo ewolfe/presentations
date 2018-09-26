@@ -1,3 +1,6 @@
+[![Greenkeeper badge](https://badges.greenkeeper.io/ewolfe/presentations.svg)](https://greenkeeper.io/)
+[![Build Status](https://travis-ci.org/ewolfe/presentations.svg?branch=master)](https://travis-ci.org/ewolfe/presentations)
+
 # Presentations
 
 > Source code for presentations I’ve given
