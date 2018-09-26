@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "start": "mdx-deck"
+    "lint": "prettier --list-different \"./**/*.js\"",
+    "start": "mdx-deck",
+    "test": "yarn lint"
   },
   "author": "ewolfe <e@ewolfe.me>",
   "license": "MIT",
