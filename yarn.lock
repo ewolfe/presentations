@@ -3160,9 +3160,9 @@ mdurl@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/mdurl/-/mdurl-1.0.1.tgz#fe85b2ec75a59037f2adfec100fd6c601761152e"
 
-mdx-deck-code-surfer@^0.5.0:
-  version "0.5.0"
-  resolved "https://registry.yarnpkg.com/mdx-deck-code-surfer/-/mdx-deck-code-surfer-0.5.0.tgz#bd5d4d17213a423dd53e77448170ccf5238a2deb"
+mdx-deck-code-surfer@^0.5.1:
+  version "0.5.1"
+  resolved "https://registry.yarnpkg.com/mdx-deck-code-surfer/-/mdx-deck-code-surfer-0.5.1.tgz#a2b04a029690951f7927463bdddb3802f13fea29"
   dependencies:
     code-surfer "^0.5.0"
     memoize-one "^4.0.2"
