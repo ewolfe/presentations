@@ -12,7 +12,7 @@
   "author": "ewolfe <e@ewolfe.me>",
   "license": "MIT",
   "devDependencies": {
-    "mdx-deck": "^1.7.7",
+    "mdx-deck": "^2.0.0",
     "mdx-deck-code-surfer": "^0.5.0",
     "prettier": "1.15.3",
     "raw-loader": "^1.0.0"
